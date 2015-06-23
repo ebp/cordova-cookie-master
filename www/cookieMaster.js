@@ -1,4 +1,4 @@
-(function(mod) {
+(function() {
   'use strict';
 
   var cookieMaster = {
@@ -6,7 +6,13 @@
     setCookieValue: setCookieValue
   };
 
-  mod.exports = cookieMaster;
+  if (typeof module != 'undefined' && module.exports) {
+    module.exports = cookieMaster;
+  }
+
+  if (typeof window != 'undefined') {
+    window.cookieMaster = cookieMaster;
+  }
 
   return cookieMaster;
 
@@ -52,4 +58,4 @@
   }
 
   function noop() { }
-})(module);
+})();
