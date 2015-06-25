@@ -80,11 +80,11 @@ public class CookieMaster extends CordovaPlugin {
               }
 
               if (cookieOptions.has("maxAge")) {
-                cookie.setMaxAge(cookieOptions.getLong());
+                cookie.setMaxAge(cookieOptions.getLong("maxAge"));
               }
 
               if (cookieOptions.has("secure")) {
-                cookie.setSecure(cookieOptions.getBoolean());
+                cookie.setSecure(cookieOptions.getBoolean("secure"));
               }
 
               String cookieString = cookie.toString().replace("\"", "");
